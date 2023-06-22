@@ -44,7 +44,7 @@ import { ContributorRequest } from "./github/api/request/contributor.request";
 let mns = ManagerSource.build(new ConfigSource({
     source: SourceEnum.GITHUB,
     api: new ConfigApi({
-      token: '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',
+      token: '-----------',
       owner: 'gilberto-009199',
       org:'Javeiros-brasil',
       ownerEnum: OwnerEnum.org
