@@ -1,0 +1,22 @@
+{
+  "version": "2.4.2",
+  "compilerOptions": {
+      "lib": ["es5", "es6"],
+      "target": "es6",
+      "module": "commonjs",
+      "moduleResolution": "node",
+      "outDir": "./dist",
+      "baseUrl":".",
+      "paths": {
+        "@core/*": ["src/core/*"],
+        "@github/*":["src/github/*"],
+        "https://esm.sh/@octokit/core":["./node_modules/@octokit/core"]
+      },
+      "emitDecoratorMetadata": true,
+      "experimentalDecorators": true,
+	    "resolveJsonModule": true,
+	    "allowSyntheticDefaultImports": true,
+      "declaration": true,
+      "sourceMap": true
+  }
+}

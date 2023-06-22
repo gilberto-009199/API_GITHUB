@@ -1,0 +1,30 @@
+{
+  "name": "@javeiros-brasil/api-github",
+  "version": "1.0.0",
+  "license": "GPL3",
+  "description": "",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "/dist"
+  ],
+  "scripts": {
+    "start:dev": "npx nodemon",
+    "start": "npm run build && node dist/index.js",
+    "build": "rimraf ./dist && tsc --project tsconfig.json && tsc-alias -p tsconfig.json",
+    "build:browser": "rimraf ./dist_browser && tsc --project tsconfig.browser.json && tsc-alias -p tsconfig.browser.json",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "gil",
+  "dependencies": {
+    "@octokit/core": "^4.2.4"
+  },
+  "devDependencies": {
+    "@types/node": "18.15.3",
+    "nodemon": "2.0.21",
+    "rimraf": "4.4.0",
+    "ts-node": "10.9.1",
+    "tsc-alias": "^1.8.5",
+    "typescript": "5.0.2"
+  }
+}

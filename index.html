@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <header>
+        <meta charset="utf-8">
+    </header>
+    <body>
+        <script type="module">
+            //import { Octokit } from "https://esm.sh/@octokit/core"; API Manager File
+            import { ConfigSource, SourceEnum, ManagerSource, ConfigApi, OwnerEnum, RepositoryRequest } from "./dist_browser/index.js";
+
+            globalThis.mns = ManagerSource.build(new ConfigSource({
+                source: SourceEnum.GITHUB,
+                api: new ConfigApi({
+                    token: '--------------------------------',
+                    owner: 'gilberto-009199',
+                    org:'Javeiros-brasil',
+                    ownerEnum: OwnerEnum.org
+                })
+            }));
+
+            globalThis.mns.api.createRequest(RepositoryRequest).findAll().then(data=>{
+                console.log(data);
+            }).catch(er=>{
+                console.error(er)
+            })
+
+        </script>
+        <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/rest.js/15.2.6/octokit-rest.min.js" integrity="sha512-uiSucQ5TdEImoU68Gp+mxXJ54l4lQm5bTd+T0tj7KcCupCDrKr+FdmgXipF+2Exfc6xDAcnPbr5rXB5bEZS0bw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>-->
+    </body>
+</html>
