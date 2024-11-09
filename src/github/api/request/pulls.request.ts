@@ -7,6 +7,6 @@ export class PullRequest extends Request{
         return this.client("GET /repos/{owner}/{repo}/pulls", {
             owner: owner || (this.ownerEnum == OwnerEnum.user)?this.owner: this.org,
             repo: repos
-        });
+        }).then(res=> res.data);
     }
 }

@@ -8,13 +8,13 @@ export class CommitRequest extends Request{
             owner: owner || (this.ownerEnum == OwnerEnum.user)?this.owner: this.org,
             repo: repos,
             sha: commit_sha
-        });
+        }).then(res => res.data);
     }
 
     public findAll( repos: string , owner: string  = null ):Promise<any>{
         return this.client("GET /repos/{owner}/{repo}/commits", {
             owner: owner || (this.ownerEnum == OwnerEnum.user)?this.owner: this.org,
             repo: repos
-        });
+        }).then(res => res.data);
     }
 }
