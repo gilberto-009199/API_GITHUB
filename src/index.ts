@@ -16,7 +16,7 @@ export * from "@github/api/request/request.js";
 
 /* Examples API Request
 
-import { ConfigSource, SourceEnum, ManagerSource } from '@core';
+import { ConfigSource, SourceEnum, ManagerSource } from './core';
 import { ConfigApi } from "./github/api/config/api.config";
 import { OwnerEnum } from "./github/api/enum/owner.enum";
 import { RepositoryRequest } from "./github/api/request/repository.request";
